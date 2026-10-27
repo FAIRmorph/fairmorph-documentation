@@ -25,7 +25,7 @@ jobs:
       - name: Checkout Repository with Submodules
         uses: actions/checkout@v4
         with:
-          submodules: recursive # Fetches external/engine and external/gui
+          submodules: recursive
 
       - name: Setup Node (Node 24)
         uses: actions/setup-node@v4

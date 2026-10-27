@@ -1,19 +1,88 @@
 ---
-title: FAIRmorph Documentation
-description: Complete guide and API reference for the FAIRmorph engine and desktop GUI.
+title: FAIRmorph Ecosystem
+description: Transparent, reliable, and low-barrier data curation designed for biodiversity and ecological researchers.
+template: splash
 hero:
-  tagline: Transform ecological observation data into FAIR-compliant interoperable formats.
+  title: FAIR & Reproducible Ecological Data Curation
+  tagline: Standardize field records, bind media metadata, and verify spatial integrity—delivering transparent, FAIR-aligned datasets without technical overhead.
   actions:
-    - text: Getting Started
-      link: /fairmorph-docs/guide/overview/
+    - text: Read the Architectural Overview
+      link: guide/overview/
       icon: right-arrow
       variant: primary
-    - text: Engine API
-      link: /fairmorph-docs/engine/api/
+    - text: Explore GitHub Organization
+      link: https://github.com/fairmorph/fairmorph-engine
       icon: external
 ---
 
-## Ecosystem Components
+import { Card, CardGrid, Badge } from '@astrojs/starlight/components';
 
-- **Core Engine**: Python transformation library (`fairmorph-engine`).
-- **Desktop GUI**: Cross-platform desktop app using Svelte and Tauri (`fairmorph-gui`).
+:::caution[Project Status: Pre-Alpha & Architectural Planning]
+**Active development is currently in the architectural planning phase.** 
+
+FAIRmorph is establishing domain specifications, vocabulary mappings, and validation rule sets. Repositories will update continuously as development milestones are reached.
+:::
+
+## Core Value Proposition
+
+<CardGrid>
+  <Card title="Sensitive Data Sovereignty" icon="shield">
+    <Badge text="Pillar 1" variant="note" />
+    
+    Complete local data privacy. Red-list species coordinates, sensitive geolocations, and unpublished field observations remain strictly on your local machine—no mandatory cloud sync or external exposure.
+  </Card>
+
+  <Card title="Zero Technical Overhead" icon="rocket">
+    <Badge text="Pillar 2" variant="note" />
+    
+    Designed specifically for domain scientists, not software engineers. Single-click native desktop launcher requiring no environment setup, runtime management, or command-line interaction.
+  </Card>
+
+  <Card title="Automated Media & Metadata Binding" icon="document">
+    <Badge text="Pillar 3" variant="note" />
+    
+    Seamlessly link field imagery with observation logs. Embedded EXIF spatial and temporal metadata is automatically parsed, cross-referenced, and bound into unified occurrence records.
+  </Card>
+
+  <Card title="Transparent & Verifiable Lineage" icon="list-format">
+    <Badge text="Pillar 4" variant="note" />
+    
+    Guaranteed scientific reproducibility. Every schema mapping, unit standardization, and record modification is recorded into human-readable, machine-inspectable provenance manifests.
+  </Card>
+
+  <Card title="Domain & GIS-Aware Quality Control" icon="approve-check">
+    <Badge text="Pillar 5" variant="note" />
+    
+    Catch spatial and biological anomalies before archiving. Automated offline sanity checks detect coordinate inversions (e.g., latitude/longitude swaps), datum shifts compatible with **QGIS** workflows, and TDWG vocabulary errors.
+  </Card>
+
+  <Card title="Turnkey FAIR Repository Deposit" icon="share">
+    <Badge text="Pillar 6" variant="note" />
+    
+    Streamlined package generation formatted natively for global biodiversity networks (**GBIF**, **OBIS** Darwin Core Archives) and generalist data repositories (**Zenodo**, **Dryad**) to secure persistent DOIs.
+  </Card>
+</CardGrid>
+
+---
+
+## Ecosystem Architecture
+
+<CardGrid>
+  <Card title="Domain Validation Engine" icon="laptop">
+    <Badge text="In Planning" variant="note" />
+    
+    Encapsulates ecological data rules, spatial coordinate sanity algorithms, EXIF binding logic, and Darwin Core Archive compilation pipelines for GBIF and OBIS.
+  </Card>
+
+  <Card title="Visual Field Data Studio" icon="setting">
+    <Badge text="In Planning" variant="note" />
+    
+    An intuitive desktop workspace for researchers to visually map tabular field data, inspect QGIS-compatible spatial layers, preview media links, and verify provenance logs.
+  </Card>
+
+  <Card title="Docs-as-Code Infrastructure" icon="open-book">
+    <Badge text="Active" variant="success" />
+    
+    Automated documentation portal ensuring technical specifications, domain vocabularies, and curation workflows remain continuously synchronized.
+  </Card>
+</CardGrid>

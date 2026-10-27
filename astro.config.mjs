@@ -36,33 +36,7 @@ export default defineConfig({
             { label: 'Overview', slug: 'guide/overview' },
             { label: 'Installation', slug: 'guide/installation' },
           ],
-        },
-        {
-          label: 'Core Engine (Python)',
-          items: [
-            {
-              label: 'Manual & Guides',
-              items: [{ autogenerate: { directory: 'engine' } }],
-            },
-            {
-              label: 'API Reference',
-              items: [{ autogenerate: { directory: 'engine/api', collapsed: true } }],
-            },
-          ],
-        },
-        {
-          label: 'Desktop App (Svelte / Tauri)',
-          items: [
-            {
-              label: 'Manual & Guides',
-              items: [{ autogenerate: { directory: 'gui' } }],
-            },
-            {
-              label: 'Architecture & Components',
-              items: [{ autogenerate: { directory: 'gui/api', collapsed: true } }],
-            },
-          ],
-        },
+        }
       ],
     }),
   ],
