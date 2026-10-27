@@ -1,0 +1,29 @@
+{
+  "name": "fairmorph-documentation",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "sync": "node scripts/sync-docs.js",
+    "gen-engine": "python3 scripts/gen-engine-docs.py",
+    "gen-gui": "node scripts/gen-gui-docs.js",
+    "prepare-docs": "npm run sync && npm run gen-engine && npm run gen-gui",
+    "predev": "npm run prepare-docs",
+    "prebuild": "npm run prepare-docs",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/markdown-remark": "^7.3.4",
+    "@astrojs/starlight": "^0.42.7",
+    "astro": "^7.2.10",
+    "katex": "^0.19.1",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
+    "sharp": "^0.35.3"
+  },
+  "devDependencies": {
+    "fs-extra": "^11.4.1"
+  }
+}

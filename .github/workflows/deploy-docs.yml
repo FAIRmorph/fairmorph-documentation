@@ -1,0 +1,55 @@
+name: Deploy FAIRmorph Docs
+
+on:
+  push:
+    branches: [ main ]
+  repository_dispatch:
+    types: [code-updated]
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install & Generate API Docs
+        run: |
+          pip install ./external/engine pydoc-markdown
+          npm install
+          npm run build
+
+      - name: Upload Artifacts (Astro output folder)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' # Astro outputs static files here by default
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
