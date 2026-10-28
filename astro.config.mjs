@@ -18,7 +18,13 @@ export default defineConfig({
 
   integrations: [
     starlight({
-      title: 'FAIRmorph Documentation',
+      title: 'FAIRmorph Ecosystem',
+      description: 'Locally transform heterogeneous field observations and media assets into verified, FAIR-compliant datasets through transparent provenance and repeatable curation workflows' , 
+      logo: {
+        src: '/public/img/logo.png',
+        alt: 'FAIRmorph Ecosystem Logo',
+        replacesTitle: false,
+      },
       customCss: [
         'katex/dist/katex.min.css',
       ],
