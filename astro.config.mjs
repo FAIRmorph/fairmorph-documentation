@@ -5,8 +5,8 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
 export default defineConfig({
-  site: 'https://fairmorph.github.io',
-  base: '/fairmorph-documentation/',
+  site: 'https://www.fairmorph.org',
+  base: '/',
 
   // Modern Astro 7 unified Markdown pipeline configuration
   markdown: {
